@@ -3,6 +3,8 @@ import 'package:designtraining/helper/App_Elevated.dart';
 import 'package:designtraining/helper/App_Field.dart';
 import 'package:designtraining/helper/App_colors.dart';
 import 'package:designtraining/helper/App_textStyle.dart';
+import 'package:designtraining/screens/button_nav_screens/view.dart';
+import 'package:designtraining/screens/sign_screens/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -57,7 +59,12 @@ class SignIn extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            AppElevated(text: "Sign In"),
+            AppElevated(
+                text: "Sign In",
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ViewScreen()));
+                }),
             SizedBox(
               height: 15,
             ),
@@ -67,9 +74,15 @@ class SignIn extends StatelessWidget {
                 Text("Don’t have an account? ",
                     style: AppTextstyle.kTextStyle18400
                         .copyWith(color: AppColors.secondColor)),
-                Text("Sign Up ",
-                    style: AppTextstyle.kTextStyle18400
-                        .copyWith(color: AppColors.primaryColor)),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUp()));
+                  },
+                  child: Text("Sign Up ",
+                      style: AppTextstyle.kTextStyle18400
+                          .copyWith(color: AppColors.primaryColor)),
+                ),
               ],
             )
           ],
