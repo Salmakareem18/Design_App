@@ -31,7 +31,10 @@ class _CartScreenState extends State<CartScreen> {
               Expanded(child: CartList()),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
-                child: AppElevated(text: "CheckOut"),
+                child: AppElevated(
+                  text: "CheckOut",
+                  onPressed: () {},
+                ),
               )
             ],
           )),
