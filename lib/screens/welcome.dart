@@ -2,6 +2,8 @@ import 'package:designtraining/helper/App_Elevated.dart';
 import 'package:designtraining/helper/App_Outline_button.dart';
 import 'package:designtraining/helper/App_colors.dart';
 import 'package:designtraining/helper/App_textStyle.dart';
+import 'package:designtraining/screens/sign_screens/sign_in.dart';
+import 'package:designtraining/screens/sign_screens/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
@@ -38,11 +40,22 @@ class Welcome extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            AppElevated(text: "Sign Up"),
+            AppElevated(
+                text: "Sign Up",
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignUp()));
+                }),
             SizedBox(
               height: 16,
             ),
-            AppOutlineButton(text: "Sign In")
+            AppOutlineButton(
+              text: "Sign In",
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => SignIn()));
+              },
+            )
           ],
         ),
       ),
