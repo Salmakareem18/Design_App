@@ -3,6 +3,7 @@ import 'package:designtraining/helper/App_Elevated.dart';
 import 'package:designtraining/helper/App_Field.dart';
 import 'package:designtraining/helper/App_colors.dart';
 import 'package:designtraining/helper/App_textStyle.dart';
+import 'package:designtraining/screens/sign_screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -58,7 +59,12 @@ class SignUp extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            AppElevated(text: "Sign Up")
+            AppElevated(
+                text: "Sign Up",
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignIn()));
+                })
           ],
         ),
       ),
