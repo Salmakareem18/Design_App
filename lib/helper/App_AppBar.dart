@@ -23,7 +23,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(title, style: AppTextstyle.kTextAPPBar),
       leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Icon(
             icon,
             color: AppColors.primaryColor,

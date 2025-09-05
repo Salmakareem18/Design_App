@@ -3,12 +3,14 @@ import 'package:designtraining/helper/App_textStyle.dart';
 import 'package:flutter/material.dart';
 
 class AppOutlineButton extends StatelessWidget {
-  AppOutlineButton({super.key, required this.text});
+  AppOutlineButton({super.key, required this.text, required this.onPressed});
   String text;
+  Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         side: BorderSide(color: AppColors.primaryColor),
         shape: RoundedRectangleBorder(
